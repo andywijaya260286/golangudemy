@@ -10,7 +10,7 @@ func main() {
 	fmt.Println(err)
 
 	// Short declaration operator
-	// Declare a variable and Assign a value 
+	// Declare a variable and Assign a value
 	a := 42
 	fmt.Println("nilai a = ", a)
 	a = 45 + 1
