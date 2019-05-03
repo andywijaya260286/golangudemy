@@ -1,17 +1,17 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-const(
-	a=0
-	b=iota
+const (
+	a = 0
+	b = iota
 	c
 )
 
-const(
-	d=iota
+const (
+	d = iota
 	e
 	f
 	g
