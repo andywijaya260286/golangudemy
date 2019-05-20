@@ -13,17 +13,26 @@ func init(){
 }
 
 func main(){
+
+	//A WaitGroup waits for a collection of goroutines to finish. 
+	//The main goroutine calls Add to set the number of goroutines to wait for. 
+	//Then each of the goroutines runs and calls Done when finished. 
+	//At the same time, Wait can be used to block until all goroutines have finished.
+
 	fmt.Println("Total CPUs = ",runtime.NumCPU())
 	fmt.Println("Total Go Routines = ",runtime.NumGoroutine())
 
-	wg.Add(1)
+	wg.Add(2)
 	go foo()
-	fmt.Println("Arch = ",runtime.GOARCH)
-	bar()
+	go bar()
+	wg.Wait()
+
+	fmt.Println("CPU Architecture = ",runtime.GOARCH)
+	
 
 	fmt.Println("Total CPUs = ",runtime.NumCPU())
 	fmt.Println("Total Go Routines = ",runtime.NumGoroutine())
-	wg.Wait()
+	
 
 }
 
@@ -38,4 +47,5 @@ func bar(){
 	for i:=1; i<10; i++{
 		fmt.Println("bar = ",i)
 	}
+	wg.Done()
 }

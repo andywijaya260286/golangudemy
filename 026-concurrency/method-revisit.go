@@ -41,6 +41,12 @@ func main(){
 		radius:5,
 	}
 
+	d:=&c
+	e:=d.luas()
+	fmt.Println(e)
+
+	//or
+
 	x:=c.luas()
 	fmt.Println(x)
 
