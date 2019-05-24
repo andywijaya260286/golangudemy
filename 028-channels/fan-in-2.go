@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	c := fanIn(boring("Joe"), boring("Ann"))
+	c := fanIn(boring("Joe"), boring2("Ann"))
 	for i := 0; i < 10; i++ {
 		fmt.Println(<-c)
 	}
@@ -20,7 +20,21 @@ func boring(msg string) <-chan string {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s %d", msg, i)
 			fmt.Println("random ",msg,i,time.Duration(rand.Intn(1e3)))
-			time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+			//time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+			time.Sleep(time.Second*1)
+		}
+	}()
+	return c
+}
+
+func boring2(msg string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for i := 0; ; i++ {
+			c <- fmt.Sprintf("%s %d", msg, i)
+			fmt.Println("random ",msg,i,time.Duration(rand.Intn(1e3)))
+			//time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+			time.Sleep(time.Second*3)
 		}
 	}()
 	return c

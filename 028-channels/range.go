@@ -15,7 +15,7 @@ func main(){
 	go func(){
 		for i:=0;i<5;i++{
 			c<-i
-			time.Sleep(time.Second*2)
+			time.Sleep(time.Second*2) 
 		}
 		close(c)
 	}()
