@@ -26,6 +26,8 @@ func main() {
     //	Error() string
 	//}
 
+	//take a look at interfacepoly.go if dont understand
+
 	if err:=oops(); err!=nil{
 		fmt.Println(err)
 	}

@@ -26,6 +26,6 @@ func g(i int){
 		panic(fmt.Sprintf("%v",i))
 	}
 	defer fmt.Println("Defer in g ",i)
-	fmt.Println("Printint in g",i)
+	fmt.Println("Printing in g",i)
 	g(i+1)
 }
