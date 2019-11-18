@@ -1,14 +1,14 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
 func main() {
 	n, err := fmt.Println("Testing")
-    if(err!=nil){
-        fmt.Println("err = ",err)
-    }
+	if err != nil {
+		fmt.Println("err = ", err)
+	}
 
-    fmt.Println(n)
+	fmt.Println(n)
 }

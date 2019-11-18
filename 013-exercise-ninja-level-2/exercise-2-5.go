@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
@@ -10,6 +10,6 @@ var s string = `
 	Testing3
 `
 
-func main(){
+func main() {
 	fmt.Println(s)
 }

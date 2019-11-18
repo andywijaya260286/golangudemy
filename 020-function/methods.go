@@ -1,57 +1,57 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-type person struct{
+type person struct {
 	first string
-	last string
+	last  string
 }
 
-type secretagent struct{
-	person 
+type secretagent struct {
+	person
 	ltk bool
 }
 
-type human interface{//everything that can speak is human
+type human interface { //everything that can speak is human
 	speak()
 }
 
-func bar(h human){//only human can access this function
+func bar(h human) { //only human can access this function
 	fmt.Println("I AM HOMANNNN")
 }
 
 //func (r receiver) identifier(parameters) (return(s)) { code }
 
-func (s secretagent) speak(){//method
+func (s secretagent) speak() { //method
 	fmt.Println("I am ", s.first, s.last)
 }
 
-func (p person) speak(){//method
+func (p person) speak() { //method
 	fmt.Println("I am ", p.first, p.last)
 }
 
-func main(){
-	x:=secretagent{
-		person:person{
-			first:"James", // "James","Bond"
-			last:"Bond",
+func main() {
+	x := secretagent{
+		person: person{
+			first: "James", // "James","Bond"
+			last:  "Bond",
 		},
-		ltk:true,
+		ltk: true,
 	}
 
-	x2:=secretagent{
-		person:person{
-			first:"Michael", // "James","Bond"
-			last:"Jordan",
+	x2 := secretagent{
+		person: person{
+			first: "Michael", // "James","Bond"
+			last:  "Jordan",
 		},
-		ltk:true,
+		ltk: true,
 	}
 
-	p:=person{
-		first:"Eric",
-		last:"Cantona",
+	p := person{
+		first: "Eric",
+		last:  "Cantona",
 	}
 
 	fmt.Println(x)

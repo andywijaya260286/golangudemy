@@ -1,14 +1,14 @@
 package main
 
-import(
+import (
 	"fmt"
 	"runtime"
 	"sync"
 )
 
-func main(){
-	fmt.Println("Total CPUs = ",runtime.NumCPU())
-	fmt.Println("NumGoroutine init = ",runtime.NumGoroutine())
+func main() {
+	fmt.Println("Total CPUs = ", runtime.NumCPU())
+	fmt.Println("NumGoroutine init = ", runtime.NumGoroutine())
 
 	counter := 0
 
@@ -16,22 +16,22 @@ func main(){
 	var wg sync.WaitGroup
 	wg.Add(gs)
 
-	for i:=0;i<gs;i++{
-		go func(){
-			v:=counter
+	for i := 0; i < gs; i++ {
+		go func() {
+			v := counter
 			runtime.Gosched()
 			v++
-			counter=v
+			counter = v
 
-			fmt.Println("Counter in for = ",counter)
+			fmt.Println("Counter in for = ", counter)
 			wg.Done()
 		}()
-		fmt.Println("NumGoroutine = ",runtime.NumGoroutine())
+		fmt.Println("NumGoroutine = ", runtime.NumGoroutine())
 	}
 
 	wg.Wait()
 
-	fmt.Println("Counter = ",counter)
+	fmt.Println("Counter = ", counter)
 
 	//go run -race race-condition.go
 

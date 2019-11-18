@@ -7,14 +7,14 @@ import (
 func main() {
 	c := make(chan int)
 
-	go func(){
+	go func() {
 		for i := 0; i < 100; i++ {
 			c <- i
 		}
 		close(c)
 	}()
-	
-	for x:=range c{
+
+	for x := range c {
 		fmt.Println(x)
 	}
 

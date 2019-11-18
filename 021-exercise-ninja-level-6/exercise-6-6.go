@@ -1,15 +1,15 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
-	func (){
+func main() {
+	func() {
 		fmt.Println("Änonymous func")
 	}()
 
-	func (i int){
-		fmt.Println("Änonymous func , param =",i)
+	func(i int) {
+		fmt.Println("Änonymous func , param =", i)
 	}(46)
 }

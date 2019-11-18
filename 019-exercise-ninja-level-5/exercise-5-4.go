@@ -5,17 +5,17 @@ import (
 )
 
 func main() {
-	s := struct{
-		first string
-		friends map[string]int
+	s := struct {
+		first    string
+		friends  map[string]int
 		favDrink []string
 	}{
-		first:"Andy",
-		friends:map[string]int{
-			"temanbaik":3,
-			"teman":4,
+		first: "Andy",
+		friends: map[string]int{
+			"temanbaik": 3,
+			"teman":     4,
 		},
-		favDrink:[]string{
+		favDrink: []string{
 			"avocado",
 			"bearbrand",
 		},
@@ -23,11 +23,11 @@ func main() {
 
 	fmt.Println(s)
 
-	for k, v:= range s.friends{
-		fmt.Println(k,v)
+	for k, v := range s.friends {
+		fmt.Println(k, v)
 	}
-	for k, v:= range s.favDrink{
-		fmt.Println(k,v)
+	for k, v := range s.favDrink {
+		fmt.Println(k, v)
 	}
-	
+
 }

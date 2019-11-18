@@ -19,9 +19,9 @@ func boring(msg string) <-chan string {
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s %d", msg, i)
-			fmt.Println("random ",msg,i,time.Duration(rand.Intn(1e3)))
+			fmt.Println("random ", msg, i, time.Duration(rand.Intn(1e3)))
 			//time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
-			time.Sleep(time.Second*1)
+			time.Sleep(time.Second * 1)
 		}
 	}()
 	return c
@@ -32,9 +32,9 @@ func boring2(msg string) <-chan string {
 	go func() {
 		for i := 0; ; i++ {
 			c <- fmt.Sprintf("%s %d", msg, i)
-			fmt.Println("random ",msg,i,time.Duration(rand.Intn(1e3)))
+			fmt.Println("random ", msg, i, time.Duration(rand.Intn(1e3)))
 			//time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
-			time.Sleep(time.Second*3)
+			time.Sleep(time.Second * 3)
 		}
 	}()
 	return c

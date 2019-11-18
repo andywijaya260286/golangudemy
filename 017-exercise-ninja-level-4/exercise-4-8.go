@@ -5,15 +5,15 @@ import (
 )
 
 func main() {
-	x:= map[string][]string{
-		"bond_james":[]string{"Martini","Woman"},
-		"moneypenny_miss":{"James Bond","Literatur"},
+	x := map[string][]string{
+		"bond_james":      []string{"Martini", "Woman"},
+		"moneypenny_miss": {"James Bond", "Literatur"},
 	}
 
-	for k,v:=range x{
+	for k, v := range x {
 		fmt.Println(k)
-		for k2,v2 := range v{
-			fmt.Println(k2,v2)
+		for k2, v2 := range v {
+			fmt.Println(k2, v2)
 		}
 	}
 }

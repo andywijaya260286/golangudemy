@@ -1,12 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	//Program to print number in decimal, binary, hex
-	x:=10
+	x := 10
 
-	fmt.Printf("%d,%b,%#x",x,x,x)
+	fmt.Printf("%d,%b,%#x", x, x, x)
 }

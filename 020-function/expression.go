@@ -1,15 +1,15 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
-	f := func(){
+func main() {
+	f := func() {
 		fmt.Println("Hello Hi")
 	}
 
-	g := func(s string){
+	g := func(s string) {
 		fmt.Println("Hello Hi ", s)
 	}
 

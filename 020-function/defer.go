@@ -1,18 +1,18 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	defer foo()
 	bar()
 }
 
-func foo(){
+func foo() {
 	fmt.Println("foo")
 }
 
-func bar(){
+func bar() {
 	fmt.Println("bar")
 }

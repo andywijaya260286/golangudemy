@@ -4,11 +4,11 @@ import (
 	"fmt"
 )
 
-type person struct{
+type person struct {
 	name string
 }
 
-func changeMe(p *person){
+func changeMe(p *person) {
 	//(*p).name = "Super Saiya Goku"
 	//or
 	p.name = "Super Saiya GOKU"
@@ -17,7 +17,7 @@ func changeMe(p *person){
 
 func main() {
 	p1 := person{
-		name:"Goku",
+		name: "Goku",
 	}
 
 	fmt.Println("before change me = ", p1)

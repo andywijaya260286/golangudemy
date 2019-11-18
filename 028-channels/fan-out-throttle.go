@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strconv"
 	"sync"
 	"time"
-	"strconv"
 )
 
 func main() {
@@ -40,9 +40,9 @@ func fanOutIn(c1 chan int, c2 chan string) {
 			i := 0
 			for v := range c1 {
 				i++
-				fmt.Println(i2,v)
+				fmt.Println(i2, v)
 				func(v2 int) {
-					c2 <- fmt.Sprint(strconv.Itoa(i2) + " job id " + strconv.Itoa(v2) + " ,result ="+strconv.Itoa(timeConsumingWork(v2))) 
+					c2 <- fmt.Sprint(strconv.Itoa(i2) + " job id " + strconv.Itoa(v2) + " ,result =" + strconv.Itoa(timeConsumingWork(v2)))
 				}(v)
 			}
 			fmt.Println(i2, "Total record = ", i)

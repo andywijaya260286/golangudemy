@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 	"sync"
 )
@@ -8,7 +8,7 @@ import(
 var wg sync.WaitGroup
 var mu sync.Mutex
 
-func main(){
+func main() {
 
 	const gs = 100
 
@@ -16,11 +16,10 @@ func main(){
 
 	counter := 0
 
-	
-	for i:=0;i<gs;i++{
-		go func(){
+	for i := 0; i < gs; i++ {
+		go func() {
 			mu.Lock()
-			x:=counter
+			x := counter
 			x++
 			counter = x
 			mu.Unlock()
@@ -29,5 +28,5 @@ func main(){
 	}
 
 	wg.Wait()
-	fmt.Println("Counter = ",counter)
+	fmt.Println("Counter = ", counter)
 }

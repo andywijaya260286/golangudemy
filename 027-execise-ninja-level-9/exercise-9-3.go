@@ -1,14 +1,14 @@
 package main
 
-import(
+import (
 	"fmt"
-	"sync"
 	"runtime"
+	"sync"
 )
 
 var wg sync.WaitGroup
 
-func main(){
+func main() {
 
 	const gs = 100
 
@@ -16,10 +16,9 @@ func main(){
 
 	counter := 0
 
-	
-	for i:=0;i<gs;i++{
-		go func(){
-			x:=counter
+	for i := 0; i < gs; i++ {
+		go func() {
+			x := counter
 			runtime.Gosched()
 			x++
 			counter = x
@@ -28,5 +27,5 @@ func main(){
 	}
 
 	wg.Wait()
-	fmt.Println("Counter = ",counter)
+	fmt.Println("Counter = ", counter)
 }

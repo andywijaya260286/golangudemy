@@ -1,21 +1,21 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	foo()
 
-	func(){
+	func() {
 		fmt.Println("This is anonymous func or self execute func")
 	}()
 
-	func(s string){
-		fmt.Println("My name is ",s)
+	func(s string) {
+		fmt.Println("My name is ", s)
 	}("Andy")
 }
 
-func foo(){
+func foo() {
 	fmt.Println("This is foo")
 }

@@ -7,7 +7,7 @@ import (
 func main() {
 	c := make(chan int)
 
-	go func(){
+	go func() {
 		c <- 46
 	}()
 
@@ -15,7 +15,7 @@ func main() {
 	fmt.Println(v, ok)
 
 	close(c)
-	
+
 	v, ok = <-c
 	fmt.Println(v, ok)
 }

@@ -1,27 +1,27 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
-	x:=foo(sum69)
+func main() {
+	x := foo(sum69)
 
 	fmt.Println(x)
 
 	//or can use func as variable
-	y:=func(i int)int{
-		return i+10
+	y := func(i int) int {
+		return i + 10
 	}
-	z:=foo(y)
+	z := foo(y)
 	fmt.Println(z)
 }
 
-func sum69(i int)int{
-	return i+4
+func sum69(i int) int {
+	return i + 4
 }
 
-func foo(f func(i int)int)int{
-	x:= f(46)
+func foo(f func(i int) int) int {
+	x := f(46)
 	return x
 }

@@ -13,27 +13,27 @@ func main() {
 	fmt.Println("about to exit")
 }
 
-func gen(q chan <- int) <-chan int {
+func gen(q chan<- int) <-chan int {
 	c := make(chan int)
 
-	go func(){
+	go func() {
 		for i := 0; i < 100; i++ {
 			c <- i
 		}
 		q <- 1
 		close(c)
 	}()
-	
+
 	return c
 }
 
-func receive(c,q <-chan int){
-	for{
-		select{
-			case x := <-c :
-				fmt.Println(x)
-			case <-q:
-				return
+func receive(c, q <-chan int) {
+	for {
+		select {
+		case x := <-c:
+			fmt.Println(x)
+		case <-q:
+			return
 		}
 	}
 }

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 )
 
 type user struct {
@@ -32,7 +32,7 @@ func main() {
 
 	sb, err := json.Marshal(users)
 
-	if err!=nil{
+	if err != nil {
 		fmt.Println(err)
 	}
 

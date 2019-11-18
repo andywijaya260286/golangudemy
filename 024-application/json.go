@@ -1,27 +1,27 @@
 package main
 
-import(
-	"fmt"
+import (
 	"encoding/json"
+	"fmt"
 )
 
-type person struct{
+type person struct {
 	First string //need to be upper case, otherwise json Marshal not working
-	Last string
-	Age int `umur`
+	Last  string
+	Age   int `umur`
 }
 
-func main(){
+func main() {
 	p1 := person{
-		First:"james",
-		Last:"bond",
-		Age:33,
+		First: "james",
+		Last:  "bond",
+		Age:   33,
 	}
 
 	p2 := person{
-		First:"miss",
-		Last:"moneypeny",
-		Age:29,
+		First: "miss",
+		Last:  "moneypeny",
+		Age:   29,
 	}
 
 	people := []person{
@@ -34,8 +34,8 @@ func main(){
 	//func Marshal(v interface{}) ([]byte, error)
 	bs, err := json.Marshal(people)
 
-	if err!=nil {
-		fmt.Println("error :",err)
+	if err != nil {
+		fmt.Println("error :", err)
 	}
 
 	fmt.Println(string(bs))

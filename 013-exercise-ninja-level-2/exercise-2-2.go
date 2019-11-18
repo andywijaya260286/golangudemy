@@ -1,16 +1,16 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
-	a := 88==88
-	b := 2>=2
-	c := 2<=2
-	d := 2!=2
-	e := 2>2
-	f := 2<2
+func main() {
+	a := 88 == 88
+	b := 2 >= 2
+	c := 2 <= 2
+	d := 2 != 2
+	e := 2 > 2
+	f := 2 < 2
 
 	fmt.Println(a)
 	fmt.Println(b)

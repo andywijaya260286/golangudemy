@@ -14,7 +14,7 @@ func main() {
 func gen() <-chan int {
 	c := make(chan int)
 
-	go func(){
+	go func() {
 		for i := 0; i < 100; i++ {
 			c <- i
 		}
@@ -24,8 +24,8 @@ func gen() <-chan int {
 	return c
 }
 
-func receive(ch <-chan int){
-	for x:=range ch{
+func receive(ch <-chan int) {
+	for x := range ch {
 		fmt.Println(x)
 	}
 }

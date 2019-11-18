@@ -1,21 +1,21 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
-	x:=foo()
+func main() {
+	x := foo()
 	fmt.Println(x)
-	y,z:=bar()
+	y, z := bar()
 	fmt.Println(y)
 	fmt.Println(z)
 }
 
-func foo()int{
+func foo() int {
 	return 46
 }
 
-func bar() (int,string){
-	return 33,"James"
+func bar() (int, string) {
+	return 33, "James"
 }

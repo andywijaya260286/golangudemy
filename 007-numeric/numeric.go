@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 	"runtime"
 )
@@ -9,10 +9,9 @@ import(
 var z float64
 var b int
 
-
 var a int8 = -128 //int8, int16, int32, int64, uint8, uint16, uint32, uint64 (unassign)
 
-func main(){
+func main() {
 
 	//https://golang.org/ref/spec#Numeric_types
 
@@ -26,11 +25,11 @@ func main(){
 	fmt.Println(z)
 	fmt.Println(a)
 	fmt.Println(b)
-	fmt.Printf("%T\n",x)
-	fmt.Printf("%T\n",y)
-	fmt.Printf("%T\n",z)
-	fmt.Printf("%T\n",a)
-	fmt.Printf("%T\n",b)
+	fmt.Printf("%T\n", x)
+	fmt.Printf("%T\n", y)
+	fmt.Printf("%T\n", z)
+	fmt.Printf("%T\n", a)
+	fmt.Printf("%T\n", b)
 
 	fmt.Println(runtime.GOOS)
 	fmt.Println(runtime.GOARCH)

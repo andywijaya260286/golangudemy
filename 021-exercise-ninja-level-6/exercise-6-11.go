@@ -1,16 +1,16 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	//4*3*2*1
 	fmt.Println(factorial(4))
 }
 
-func factorial(n int)int{
-	if(n==1){
+func factorial(n int) int {
+	if n == 1 {
 		return 1
 	}
 	return n * factorial(n-1)

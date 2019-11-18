@@ -1,29 +1,29 @@
 package main
 
-import(
+import (
 	"fmt"
 	"time"
 )
 
-func main(){
+func main() {
 	//range pull from channel until its close
 
 	fmt.Println("-----START-----")
-	c:=make(chan int)
+	c := make(chan int)
 
 	//send
-	go func(){
-		for i:=0;i<5;i++{
-			c<-i
-			time.Sleep(time.Second*2) 
+	go func() {
+		for i := 0; i < 5; i++ {
+			c <- i
+			time.Sleep(time.Second * 2)
 		}
 		close(c)
 	}()
 
 	//receive
-	for x:=range c{
+	for x := range c {
 		fmt.Println(x)
 	}
-	
+
 	fmt.Println("-----END-----")
 }

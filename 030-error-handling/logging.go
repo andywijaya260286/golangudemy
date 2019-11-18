@@ -1,9 +1,9 @@
 package main
 
-import(
+import (
 	"fmt"
-	"os"
 	"log"
+	"os"
 )
 
 func main() {
@@ -17,7 +17,7 @@ func main() {
 	defer foo()
 
 	f2, err := os.Open("no-file.txt")
-	if err!=nil{
+	if err != nil {
 		//fmt.Println("err happened :",err)
 		//log.Println("err happened :",err) //have additional datetime stamp
 		//log.Fatalln(err)
@@ -28,6 +28,6 @@ func main() {
 	fmt.Println("check log file in the directory")
 }
 
-func foo(){
+func foo() {
 	fmt.Println("fooo yah")
 }

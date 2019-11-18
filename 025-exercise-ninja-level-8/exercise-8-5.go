@@ -1,6 +1,6 @@
 package main
 
-import(
+import (
 	"fmt"
 	"sort"
 )
@@ -14,29 +14,29 @@ type user struct {
 
 type orderAge []user
 
-func(o orderAge) Len() int{
+func (o orderAge) Len() int {
 	return len(o)
 }
-func(o orderAge) Less(i, j int) bool{
-	return  o[i].Age < o[j].Age
+func (o orderAge) Less(i, j int) bool {
+	return o[i].Age < o[j].Age
 }
-func(o orderAge) Swap(i, j int){
-	o[i],o[j] = o[j],o[i]
+func (o orderAge) Swap(i, j int) {
+	o[i], o[j] = o[j], o[i]
 }
 
 type orderLast []user
 
-func(o orderLast) Len() int{
+func (o orderLast) Len() int {
 	return len(o)
 }
-func(o orderLast) Less(i, j int) bool{
-	return  o[i].Last < o[j].Last
+func (o orderLast) Less(i, j int) bool {
+	return o[i].Last < o[j].Last
 }
-func(o orderLast) Swap(i, j int){
-	o[i],o[j] = o[j],o[i]
+func (o orderLast) Swap(i, j int) {
+	o[i], o[j] = o[j], o[i]
 }
 
-func main(){
+func main() {
 	u1 := user{
 		First: "James",
 		Last:  "Bond",
@@ -72,16 +72,16 @@ func main(){
 
 	users := []user{u1, u2, u3}
 
-	fmt.Println("before = ",users)
+	fmt.Println("before = ", users)
 
 	//sort user by age
 	fmt.Println("after sort by age -------- ")
 	sort.Sort(orderAge(users))
 
-	for _,v:=range users{
-		fmt.Println(v.First,v.Last,v.Age)
+	for _, v := range users {
+		fmt.Println(v.First, v.Last, v.Age)
 		sort.Strings(v.Sayings)
-		for _,v2:=range v.Sayings{
+		for _, v2 := range v.Sayings {
 			fmt.Println(v2)
 		}
 		fmt.Println("----")
@@ -91,14 +91,13 @@ func main(){
 	fmt.Println("after sort by last -------- ")
 	sort.Sort(orderLast(users))
 
-	for _,v:=range users{
-		fmt.Println(v.First,v.Last,v.Age)
+	for _, v := range users {
+		fmt.Println(v.First, v.Last, v.Age)
 		sort.Strings(v.Sayings)
-		for _,v2:=range v.Sayings{
+		for _, v2 := range v.Sayings {
 			fmt.Println(v2)
 		}
 		fmt.Println("----")
 	}
-
 
 }

@@ -1,17 +1,17 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-const(
-	year1 int = 2019-iota
+const (
+	year1 int = 2019 - iota
 	year2
 	year3
 	year4
 )
 
-func main(){
+func main() {
 	fmt.Println(year1)
 	fmt.Println(year2)
 	fmt.Println(year3)

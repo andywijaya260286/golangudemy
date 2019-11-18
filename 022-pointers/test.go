@@ -1,29 +1,29 @@
 package main
 
-import(
+import (
 	"fmt"
 	"math"
 )
 
-type circle struct{
+type circle struct {
 	jarijari float64
 }
 
-func (c *circle) calculateArea()float64{
-	return c.jarijari*c.jarijari*math.Pi
+func (c *circle) calculateArea() float64 {
+	return c.jarijari * c.jarijari * math.Pi
 }
 
-type shape interface{
-	calculateArea()float64
+type shape interface {
+	calculateArea() float64
 }
 
-func info(sh shape){
-	fmt.Println("Luas = ",sh.calculateArea())
+func info(sh shape) {
+	fmt.Println("Luas = ", sh.calculateArea())
 }
 
-func main(){
-	lingkaran:=circle{
-		jarijari:5,
+func main() {
+	lingkaran := circle{
+		jarijari: 5,
 	}
 
 	// Receiver			Value
@@ -34,7 +34,7 @@ func main(){
 	// (t T)			T and *T
 	//info(lingkaran)
 	//info(&lingkaran)
-	
+
 	// (t *T)			*T
 	info(&lingkaran)
 }

@@ -1,8 +1,8 @@
 package main
 
-import(
-	"fmt"
+import (
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -13,7 +13,7 @@ type user struct {
 	Sayings []string
 }
 
-func main(){
+func main() {
 	u1 := user{
 		First: "James",
 		Last:  "Bond",
@@ -49,10 +49,10 @@ func main(){
 
 	users := []user{u1, u2, u3}
 
-	fmt.Println("go object = ",users)
+	fmt.Println("go object = ", users)
 
 	err := json.NewEncoder(os.Stdout).Encode(users)
-	if err != nil{
+	if err != nil {
 		fmt.Println(err)
 	}
 }

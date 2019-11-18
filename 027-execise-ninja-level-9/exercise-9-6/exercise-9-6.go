@@ -1,11 +1,11 @@
 package main
 
-import(
+import (
 	"fmt"
 	"runtime"
 )
 
-func main(){
-	fmt.Println("OS = "+runtime.GOOS)
-	fmt.Println("Architecture  = "+runtime.GOARCH)
+func main() {
+	fmt.Println("OS = " + runtime.GOOS)
+	fmt.Println("Architecture  = " + runtime.GOARCH)
 }

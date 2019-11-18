@@ -1,21 +1,21 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	//code block
 	{
-		x:=678
-		fmt.Println(x)		
+		x := 678
+		fmt.Println(x)
 	}
 
-	x:= incremental()
+	x := incremental()
 	fmt.Println(x)
 	fmt.Println(x)
 
-	y:= funcincremental()
+	y := funcincremental()
 	fmt.Println("after")
 	fmt.Println(y())
 	fmt.Println(y())
@@ -23,17 +23,17 @@ func main(){
 
 }
 
-func incremental()int{
+func incremental() int {
 	var x int
 	x++
 	return x
 }
 
-func funcincremental() func() int{
+func funcincremental() func() int {
 	var x int
-	fmt.Println("inside funcincre = ",x)
+	fmt.Println("inside funcincre = ", x)
 	return func() int {
-		fmt.Println("inside inside funcincre = ",x)
+		fmt.Println("inside inside funcincre = ", x)
 		x++
 		return x
 	}

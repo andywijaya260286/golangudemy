@@ -5,8 +5,5 @@ import (
 )
 
 func main() {
-	x := 99
-
-	fmt.Println(&x)
-
+	fmt.Println("test", true, 46)
 }

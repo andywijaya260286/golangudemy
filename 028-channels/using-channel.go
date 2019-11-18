@@ -1,12 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
-func main(){
+func main() {
 	fmt.Println("-----START-----")
-	c:=make(chan int)
+	c := make(chan int)
 
 	//send
 	go foo(c)
@@ -17,13 +17,13 @@ func main(){
 }
 
 //send
-func foo(c chan<- int){
+func foo(c chan<- int) {
 	fmt.Println("Entering foo")
 	c <- 46
 }
 
 //receive
-func bar(c <-chan int){
+func bar(c <-chan int) {
 	fmt.Println("Entering bar")
 	fmt.Println(<-c)
 }

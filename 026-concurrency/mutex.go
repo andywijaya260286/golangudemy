@@ -1,17 +1,17 @@
 package main
 
-import(
+import (
 	"fmt"
 	"runtime"
 	"sync"
 )
 
-func main(){
+func main() {
 
 	//A RWMutex is a reader/writer mutual exclusion lock
 
-	fmt.Println("Total CPUs = ",runtime.NumCPU())
-	fmt.Println("NumGoroutine init = ",runtime.NumGoroutine())
+	fmt.Println("Total CPUs = ", runtime.NumCPU())
+	fmt.Println("NumGoroutine init = ", runtime.NumGoroutine())
 
 	counter := 0
 
@@ -21,24 +21,24 @@ func main(){
 
 	var mu sync.Mutex
 
-	for i:=0;i<gs;i++{
-		go func(){
+	for i := 0; i < gs; i++ {
+		go func() {
 			mu.Lock()
-			v:=counter
+			v := counter
 			runtime.Gosched()
 			v++
-			counter=v
+			counter = v
 
-			fmt.Println("Counter in for = ",counter)
+			fmt.Println("Counter in for = ", counter)
 			mu.Unlock()
 			wg.Done()
 		}()
-		fmt.Println("NumGoroutine = ",runtime.NumGoroutine())
+		fmt.Println("NumGoroutine = ", runtime.NumGoroutine())
 	}
 
 	wg.Wait()
 
-	fmt.Println("Counter = ",counter)
+	fmt.Println("Counter = ", counter)
 
 	//go run -race race-condition.go
 

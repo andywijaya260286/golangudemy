@@ -1,21 +1,21 @@
 package main
 
-import(
+import (
 	"fmt"
-	"errors"
+	"log"
 )
 
 func main() {
 	x, err := greaterThen10(4)
-	if err!=nil{
-		fmt.Println("error : ",err)
+	if err != nil {
+		log.Fatalln("error : ", err)
 	}
 	fmt.Println(x)
 }
 
-func greaterThen10(a int) (int, error){
-	if a<10{
-		return a, errors.New("a lebih kecil dari 10")
+func greaterThen10(a int) (int, error) {
+	if a < 10 {
+		return a, fmt.Errorf("%v lebih kecil dari 10", a) //errors.New("a lebih kecil dari 10")
 	}
 
 	return a, nil

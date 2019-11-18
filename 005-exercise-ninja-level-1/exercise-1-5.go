@@ -1,21 +1,22 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
 type hotdog int
+
 var x hotdog
 var y int
 
-func main(){
+func main() {
 	fmt.Println(x)
-	fmt.Printf("%T\n",x)
+	fmt.Printf("%T\n", x)
 
 	x = 99
 	fmt.Println(x)
 
 	y = int(x)
 	fmt.Println(y)
-	fmt.Printf("%T\n",y)
+	fmt.Printf("%T\n", y)
 }
