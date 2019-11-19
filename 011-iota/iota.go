@@ -13,8 +13,8 @@ const (
 const (
 	d = iota
 	e
-	f
-	g
+	f 
+	g = iota
 )
 
 func main() {

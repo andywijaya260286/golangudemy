@@ -30,6 +30,7 @@ func main() {
 
 	for i,v := range xx {
 		fmt.Printf("index %v, xx %X\n", i, v)
+		fmt.Printf("index %v, xx %d\n", i, v)
 		fmt.Printf("index %v, xx %#U\n",i, v)
 	}
 

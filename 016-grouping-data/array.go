@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	var a [3]int
+	var a [3]int // length 3 is part of the array type
 	fmt.Println(a)
 	a[0] = 3
 	a[1] = 2

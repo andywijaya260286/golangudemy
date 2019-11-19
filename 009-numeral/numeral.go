@@ -27,8 +27,10 @@ func main() {
 	//						A (10)
 	//                      F (15)
 	//			  		1	0 (16)
-	//					4	8 (72)
+	//					4	8 (72) -> 4x16=64 + 8 = 72
 	//			  3		8   F (911)
+
+	// H -> Byte/Dec = 72 -> Base2/Binary = 1001000 -> Base16/Hexa = 48
 
 	a := "H"
 	fmt.Println(a)
