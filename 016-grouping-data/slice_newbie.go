@@ -4,6 +4,8 @@ import(
 	"fmt"
 )
 
+var tt []int = []int{1,11,11}
+
 func main() {
 	// x:= type{values} //composite literal
 	x:= []int{1,2,3,4,5} // slice allow you to group together values of same type
@@ -16,6 +18,9 @@ func main() {
 	for i:=0; i<len(x); i++{
 		fmt.Println("x = ",x[i])
 	}
+
+	xx:=append(tt, 2,3,4)
+	fmt.Println(xx)
 
 	//slicing a slice
 	fmt.Println(x[1:4]) // [start from : end before]
@@ -32,5 +37,7 @@ func main() {
 	//delete 3, 4 from the slice
 	z=append(z[:2],z[4:]...)
 	fmt.Println("after delete ",z)
+
+	//make
 
 }
