@@ -5,10 +5,10 @@ import(
 )
 
 const(
-	a = 1 << iota
-	b = 1 << iota
+	a = 1 << iota //0
+	b = 1 << iota //1
 	c = 3
-	d = 1 << iota
+	d = 1 << iota //3 >> 100
 )
 
 func main(){
