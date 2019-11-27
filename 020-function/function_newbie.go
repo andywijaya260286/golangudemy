@@ -16,7 +16,7 @@ func main(){
 	//func(int, int, float64) (float64, *[]int)
 	//func(n int) func(p *T)
 
-	foo("Xxx")
+	defer foo("Xxx") //pending the execution of function until it reached the end
 
 	x:= bar("Budi")
 	fmt.Println("a= ",x);
